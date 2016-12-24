@@ -10,19 +10,19 @@ StoryboardでViewControllerのrootViewの下にviewを追加し、
 
 
 ###ViewControllerのviewWillAppearの中でSKSceneを生成＆配置
-```
+`Swift
     override func viewWillAppear(_ animated: Bool) {
         let scene = BaseSKScene(size: skView.bounds.size)
         skView.presentScene(scene)
     }
-``
+`
 
 ###SKSceneでskViewを呼び出す
 SKSceneクラスを継承したクラスを生成し、
 仕様するParticleファイルを指定してviewの階層に追加する。
 didMove関数はViewControllerのviewWillAppearから呼び出された際に走る。
 
-```Swift
+`Swift
     override func didMove(to view: SKView) {
         func emitParticle()
     }
@@ -36,5 +36,5 @@ didMove関数はViewControllerのviewWillAppearから呼び出された際に走
         snowParticle.position = CGPoint(x: self.frame.midX, y: self.frame.maxY)
         self.addChild(snowParticle)
     }
-```
+`
 

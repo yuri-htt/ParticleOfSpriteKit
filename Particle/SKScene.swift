@@ -8,14 +8,14 @@
 
 import SpriteKit
 
-class TestSKScene : SKScene {
+class BaseSKScene : SKScene {
     
     override func didMove(to view: SKView) {
         self.backgroundColor = SKColor.clear
         //little trick for iPad
         self.scaleMode = .resizeFill
         
-        NotificationCenter.default.addObserver(self, selector: #selector(TestSKScene.emitParticle(_:)), name: NSNotification.Name(rawValue: "didPressMagicButton"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(BaseSKScene.emitParticle(_:)), name: NSNotification.Name(rawValue: "didPressMagicButton"), object: nil)
     }
     
     func emitParticle(_ notification: Foundation.Notification) {

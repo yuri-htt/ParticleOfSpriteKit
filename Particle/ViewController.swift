@@ -21,7 +21,7 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        let scene = TestSKScene(size: skView.bounds.size)
+        let scene = BaseSKScene(size: skView.bounds.size)
         skView.presentScene(scene)
     }
     

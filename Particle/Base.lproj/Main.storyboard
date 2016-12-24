@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Particle" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AnL-tS-GBC" customClass="SKView">
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yPw-Ht-6f0" customClass="SpringImageView" customModule="Spring">
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOq-Sv-Nzc">
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="vOq-Sv-Nzc" secondAttribute="height" multiplier="75:88" id="OCJ-Av-fzG"/>
+                                                    <constraint firstAttribute="height" constant="100" id="OGd-wS-rpj"/>
+                                                </constraints>
+                                                <state key="normal" title="Button" image="presentBocClose"/>
+                                                <connections>
+                                                    <action selector="didPressMagicButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7gx-Ne-c5l"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="yPw-Ht-6f0" secondAttribute="height" multiplier="75:88" id="33F-6H-B1G"/>
+                                            <constraint firstItem="vOq-Sv-Nzc" firstAttribute="top" secondItem="yPw-Ht-6f0" secondAttribute="top" id="5tz-Hj-KwU"/>
+                                            <constraint firstItem="vOq-Sv-Nzc" firstAttribute="leading" secondItem="yPw-Ht-6f0" secondAttribute="leading" id="6Pm-lo-F5h"/>
+                                            <constraint firstAttribute="bottom" secondItem="vOq-Sv-Nzc" secondAttribute="bottom" id="JUr-EB-ZxG"/>
+                                            <constraint firstAttribute="trailing" secondItem="vOq-Sv-Nzc" secondAttribute="trailing" id="e10-eh-Rhx"/>
+                                            <constraint firstAttribute="height" constant="100" id="zVo-1j-Iac"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="string" keyPath="animation" value="swing"/>
+                                        </userDefinedRuntimeAttributes>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="yPw-Ht-6f0" firstAttribute="centerX" secondItem="AnL-tS-GBC" secondAttribute="centerX" id="808-nA-dzA"/>
+                                    <constraint firstItem="yPw-Ht-6f0" firstAttribute="top" secondItem="AnL-tS-GBC" secondAttribute="top" constant="200" id="mKA-A0-0ge"/>
+                                </constraints>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmasTown" translatesAutoresizingMaskIntoConstraints="NO" id="JfY-ye-Llm">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="280" id="6bw-s8-W1p"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="xmasDog" translatesAutoresizingMaskIntoConstraints="NO" id="5xR-nl-ZlJ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="7aY-Zv-Ufw"/>
+                                    <constraint firstAttribute="height" constant="200" id="c6y-yx-ECf"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AnL-tS-GBC" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="6KN-hG-X1n"/>
+                            <constraint firstItem="JfY-ye-Llm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="94g-Ho-d3p"/>
+                            <constraint firstAttribute="trailing" secondItem="AnL-tS-GBC" secondAttribute="trailing" id="DYq-tl-bsr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="JfY-ye-Llm" secondAttribute="bottom" id="SMM-go-Wvf"/>
+                            <constraint firstItem="5xR-nl-ZlJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UgW-30-75W"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="AnL-tS-GBC" secondAttribute="bottom" id="ewM-uf-8tR"/>
+                            <constraint firstItem="AnL-tS-GBC" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="fB6-if-aur"/>
+                            <constraint firstAttribute="trailing" secondItem="JfY-ye-Llm" secondAttribute="trailing" id="hT0-er-YaY"/>
+                            <constraint firstItem="5xR-nl-ZlJ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="tzq-la-TYY"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="magicButton" destination="vOq-Sv-Nzc" id="ttt-F0-fbz"/>
+                        <outlet property="presentAnimView" destination="yPw-Ht-6f0" id="ntE-J5-Agz"/>
+                        <outlet property="skView" destination="AnL-tS-GBC" id="LhZ-Ur-XfW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="45.600000000000001" y="75.112443778110944"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="presentBocClose" width="375" height="360"/>
+        <image name="xmasDog" width="438" height="454"/>
+        <image name="xmasTown" width="1191" height="842"/>
+    </resources>
+</document>

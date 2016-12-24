@@ -10,10 +10,11 @@ StoryboardでViewControllerのrootViewの下にviewを追加し、
 
 
 ###ViewControllerのviewWillAppearの中でSKSceneを生成＆配置
-`override func viewWillAppear(_ animated: Bool) {
-    let scene = BaseSKScene(size: skView.bounds.size)
-    skView.presentScene(scene)
-}
+`
+    override func viewWillAppear(_ animated: Bool) {
+        let scene = BaseSKScene(size: skView.bounds.size)
+        skView.presentScene(scene)
+    }
 `
 
 ###SKSceneでskViewを呼び出す
@@ -21,19 +22,18 @@ SKSceneクラスを継承したクラスを生成し、
 仕様するParticleファイルを指定してviewの階層に追加する。
 didMove関数はViewControllerのviewWillAppearから呼び出された際に走る。
 `
-override func didMove(to view: SKView) {
-	func emitParticle()
-}
-    
-func emitParticle() {
-        
-    guard let testParticlePath = Bundle.main.path(forResource: "snowParticle", ofType: "sks") else {
-            return
+    override func didMove(to view: SKView) {
+        func emitParticle()
     }
-        
-    let snowParticle = NSKeyedUnarchiver.unarchiveObject(withFile: testParticlePath) as! SKEmitterNode
-    snowParticle.position = CGPoint(x: self.frame.midX, y: self.frame.maxY)
-    self.addChild(snowParticle)
-}
+    
+    func emitParticle() {
+        guard let testParticlePath = Bundle.main.path(forResource: "snowParticle", ofType: "sks") else {
+            return
+        }
+    
+        let snowParticle = NSKeyedUnarchiver.unarchiveObject(withFile: testParticlePath) as! SKEmitterNode
+        snowParticle.position = CGPoint(x: self.frame.midX, y: self.frame.maxY)
+        self.addChild(snowParticle)
+    }
 `
 

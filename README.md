@@ -1,15 +1,13 @@
 # ParticleOfSpriteKit
+パーティクルとは炎や水といった自然界の曖昧なものを、CG技術を使った小さな粒子の集合によって表現する手法です。
 
-#Particle
-炎や水といった自然界の曖昧なものを、CG技術を使った小さな粒子の集合によって表現する手法です。
-
-##【実装内容】
-###SpriteKitのルールに則りSKSceneの配下にSKViewを配置する構造にする
+###【実装内容】
+####SpriteKitのルールに則りSKSceneの配下にSKViewを配置する構造にする
 StoryboardでViewControllerのrootViewの下にviewを追加し、
 継承クラスを*SKView*とする。
 
 
-###ViewControllerのviewWillAppearの中でSKSceneを生成＆配置
+####ViewControllerのviewWillAppearの中でSKSceneを生成＆配置
 `
     override func viewWillAppear(_ animated: Bool) {
         let scene = BaseSKScene(size: skView.bounds.size)
@@ -17,7 +15,7 @@ StoryboardでViewControllerのrootViewの下にviewを追加し、
     }
 `
 
-###SKSceneでskViewを呼び出す
+####SKSceneでskViewを呼び出す
 SKSceneクラスを継承したクラスを生成し、
 仕様するParticleファイルを指定してviewの階層に追加する。
 didMove関数はViewControllerのviewWillAppearから呼び出された際に走る。
